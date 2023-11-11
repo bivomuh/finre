@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:mamoney/shared/theme.dart';
 
 class VisaCard extends StatelessWidget {
-  const VisaCard({super.key});
+  const VisaCard({required this.myMoney, super.key});
+  final int myMoney;
 
   @override
   Widget build(BuildContext context) {
+    String formattedNumber = NumberFormat('#,###').format(myMoney);
+
     return Stack(
       children: [
         Image.asset('assets/myframe.png'),
@@ -37,7 +41,7 @@ class VisaCard extends StatelessWidget {
           top: 100,
           left: 20,
           child: Text(
-            'Rp123,342.00',
+            'Rp${formattedNumber}',
             style:
                 TextStyle(color: kWhiteColor, fontWeight: bold, fontSize: 36),
           ),

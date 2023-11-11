@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:mamoney/shared/theme.dart';
-import 'package:mamoney/transfer_page.dart';
 import 'package:mamoney/widget/transaction_profile_card.dart';
 import 'package:mamoney/widget/visa_card.dart';
 import 'package:mamoney/widget/widget_card.dart';
 
 class WalletPage extends StatelessWidget {
-  const WalletPage({super.key});
+  final int myMoney;
+
+  const WalletPage({required this.myMoney, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +39,7 @@ class WalletPage extends StatelessWidget {
                   padding: const EdgeInsets.all(16.0),
                   child: Column(
                     children: [
-                      const VisaCard(),
+                      VisaCard(myMoney: myMoney),
                       const SizedBox(height: 16),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -54,19 +55,7 @@ class WalletPage extends StatelessWidget {
                                           borderRadius:
                                               BorderRadius.circular(8))),
                                 ),
-                                onPressed: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) =>
-                                            const TransferToPage(
-                                          imageUrl: 'assets/2.jpg',
-                                          name: 'Itadori Yuuji',
-                                          typeAcc: 'VISA',
-                                          noAcc: 123092394,
-                                        ),
-                                      ));
-                                },
+                                onPressed: () {},
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
@@ -98,14 +87,7 @@ class WalletPage extends StatelessWidget {
                                   BorderSide(color: kStrokeColor),
                                 ),
                               ),
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const WalletPage(),
-                                  ),
-                                );
-                              },
+                              onPressed: () {},
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [

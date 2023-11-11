@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:mamoney/pages/transfer/transfer_page.dart';
+import 'package:mamoney/pages/wallet_page.dart';
 import 'package:mamoney/shared/theme.dart';
-import 'package:mamoney/transfer_page.dart';
-import 'package:mamoney/wallet_page.dart';
 import 'package:mamoney/widget/widget_card.dart';
 
 class MyWallet extends StatelessWidget {
-  const MyWallet({super.key});
+  final int myMoney;
+
+  const MyWallet({required this.myMoney, super.key});
 
   @override
   Widget build(BuildContext context) {
+    String formattedNumber = NumberFormat('#,###').format(myMoney);
+
     return CardWidget(
       child: Column(
         children: [
@@ -96,7 +101,7 @@ class MyWallet extends StatelessWidget {
                 ),
                 child: Center(
                   child: Text(
-                    'Rp712,312.00',
+                    'Rp${formattedNumber}',
                     style:
                         blackTextStyle.copyWith(fontSize: 28, fontWeight: bold),
                   ),
@@ -127,6 +132,7 @@ class MyWallet extends StatelessWidget {
                                   name: 'Itadori Yuuji',
                                   typeAcc: 'VISA',
                                   noAcc: 123092394,
+                                  myMoney: myMoney,
                                 ),
                               ));
                         },
@@ -164,7 +170,7 @@ class MyWallet extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => WalletPage(),
+                            builder: (context) => WalletPage(myMoney: myMoney),
                           ),
                         );
                       },

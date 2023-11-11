@@ -1,19 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:mamoney/main_page.dart';
 import 'package:mamoney/shared/theme.dart';
 import 'package:pattern_formatter/pattern_formatter.dart';
 
 class TransferToPage extends StatefulWidget {
-  const TransferToPage(
+  TransferToPage(
       {required this.imageUrl,
       required this.name,
       required this.typeAcc,
       required this.noAcc,
-      super.key});
+      required this.myMoney,
+      Key? key})
+      : super(key: key);
 
   final String imageUrl;
   final String name;
   final String typeAcc;
   final int noAcc;
+  int myMoney;
 
   @override
   State<TransferToPage> createState() => _TransferToPageState();
@@ -69,6 +73,7 @@ class _TransferToPageState extends State<TransferToPage> {
                   Text('My Wallet',
                       style:
                           blackTextStyle.copyWith(fontWeight: FontWeight.bold)),
+                  Text('Saldo = Rp${widget.myMoney}'),
                   const Spacer(),
                   Container(
                     width: 56,
@@ -172,16 +177,26 @@ class _TransferToPageState extends State<TransferToPage> {
                           borderRadius: BorderRadius.circular(8))),
                     ),
                     onPressed: () {
-                      Navigator.push(
+                      String amount = _nominalController.text;
+                      int amountInt;
+
+                      print(widget.myMoney);
+                      try {
+                        amountInt = int.parse(amount);
+                        setState(() {
+                          widget.myMoney = widget.myMoney - amountInt;
+                          print(widget.myMoney);
+                        });
+                      } catch (e) {
+                        print('error when catch my money');
+                      }
+
+                      Navigator.pushAndRemoveUntil(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => TransferToPage(
-                              imageUrl: 'assets/2.jpg',
-                              name: 'Itadori Yuuji',
-                              typeAcc: 'VISA',
-                              noAcc: 123092394,
-                            ),
-                          ));
+                            builder: (context) => MainPage(),
+                          ),
+                          (route) => false);
                     },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,

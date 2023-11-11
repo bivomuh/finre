@@ -1,0 +1,65 @@
+import 'package:flutter/material.dart';
+import 'package:mamoney/shared/theme.dart';
+
+class VisaCard extends StatelessWidget {
+  const VisaCard({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        Image.asset('assets/myframe.png'),
+        Padding(
+          padding: EdgeInsets.only(left: 16, top: 16),
+          child: CircleAvatar(
+            radius: 20,
+            backgroundColor: kWhiteColor,
+            child: CircleAvatar(
+              radius: 14,
+              backgroundImage: AssetImage('assets/5.jpg'),
+            ),
+          ),
+        ),
+        Positioned(
+          right: 20,
+          top: 20,
+          child: Container(
+            height: 24,
+            width: 74,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/visa.png'),
+              ),
+            ),
+          ),
+        ),
+        Positioned(
+          top: 100,
+          left: 20,
+          child: Text(
+            'Rp123,342.00',
+            style:
+                TextStyle(color: kWhiteColor, fontWeight: bold, fontSize: 36),
+          ),
+        ),
+        Positioned(
+          top: 200,
+          left: 20,
+          child: Text(
+            '08/24 - 10231203910238112',
+            style: TextStyle(color: kDarkGreyColor, fontSize: 12),
+          ),
+        ),
+        Positioned(
+            top: 180,
+            right: 20,
+            child: Container(
+              width: 36,
+              height: 36,
+              decoration: BoxDecoration(
+                  image: DecorationImage(image: AssetImage('assets/chip.png'))),
+            ))
+      ],
+    );
+  }
+}

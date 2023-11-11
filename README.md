@@ -1,6 +1,9 @@
-# mamoney
+# Finre
 
-A new Flutter project.
+Financial Record App by Bivo Muhandeza. This project created for final task in Dicoding ID Camp 2023. The design inspired by Finflex - Finacial App. 
+
+Source
+https://dribbble.com/shots/22530702-Finflex-Financial-App
 
 ## Getting Started
 

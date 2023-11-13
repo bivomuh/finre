@@ -28,6 +28,8 @@ class _TransferToPageState extends State<TransferToPage> {
 
   @override
   Widget build(BuildContext context) {
+    int newMoney = 0;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: kBackgroundColor,
@@ -151,6 +153,7 @@ class _TransferToPageState extends State<TransferToPage> {
 
               TextField(
                 controller: _nominalController,
+                onSubmitted: (value) {},
                 keyboardType: TextInputType.number,
                 inputFormatters: [ThousandsFormatter()],
                 textAlign: TextAlign.center,
@@ -177,24 +180,23 @@ class _TransferToPageState extends State<TransferToPage> {
                           borderRadius: BorderRadius.circular(8))),
                     ),
                     onPressed: () {
-                      String amount = _nominalController.text;
-                      int amountInt;
-
-                      print(widget.myMoney);
                       try {
-                        amountInt = int.parse(amount);
                         setState(() {
-                          widget.myMoney = widget.myMoney - amountInt;
-                          print(widget.myMoney);
+                          String amount = _nominalController.text;
+                          int amountInt = int.parse(amount);
+                          print('MY MONEY NOW : ${widget.myMoney}');
+                          print('Transfer Nominal : $amountInt');
+                          widget.myMoney -= amountInt;
+                          newMoney = widget.myMoney;
                         });
                       } catch (e) {
-                        print('error when catch my money');
+                        print('Try Again Man');
                       }
 
                       Navigator.pushAndRemoveUntil(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => MainPage(),
+                            builder: (context) => MainPage(myMoney: newMoney),
                           ),
                           (route) => false);
                     },

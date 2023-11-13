@@ -9,9 +9,9 @@ import 'package:mamoney/pages/wallet_page.dart';
 import 'package:mamoney/shared/theme.dart';
 
 class MainPage extends StatefulWidget {
-  final int myMoney;
+  int myMoney;
 
-  const MainPage({this.myMoney = 818234, super.key});
+  MainPage({required this.myMoney, super.key});
 
   @override
   State<MainPage> createState() => _MainPageState();

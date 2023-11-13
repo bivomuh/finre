@@ -6,8 +6,8 @@ import 'package:mamoney/pages/home_page/recent_transaction.dart';
 import 'package:mamoney/shared/theme.dart';
 
 class MyHomePage extends StatefulWidget {
-  final int myMoney;
-  const MyHomePage({required this.myMoney, super.key});
+  int myMoney;
+  MyHomePage({required this.myMoney, super.key});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();

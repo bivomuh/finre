@@ -14,11 +14,11 @@ class VisaCard extends StatelessWidget {
       children: [
         Image.asset('assets/myframe.png'),
         Padding(
-          padding: EdgeInsets.only(left: 16, top: 16),
+          padding: const EdgeInsets.only(left: 16, top: 16),
           child: CircleAvatar(
             radius: 20,
             backgroundColor: kWhiteColor,
-            child: CircleAvatar(
+            child: const CircleAvatar(
               radius: 14,
               backgroundImage: AssetImage('assets/5.jpg'),
             ),
@@ -30,7 +30,7 @@ class VisaCard extends StatelessWidget {
           child: Container(
             height: 24,
             width: 74,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/visa.png'),
               ),
@@ -41,7 +41,7 @@ class VisaCard extends StatelessWidget {
           top: 100,
           left: 20,
           child: Text(
-            'Rp${formattedNumber}',
+            'Rp$formattedNumber',
             style:
                 TextStyle(color: kWhiteColor, fontWeight: bold, fontSize: 36),
           ),
@@ -60,7 +60,7 @@ class VisaCard extends StatelessWidget {
             child: Container(
               width: 36,
               height: 36,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   image: DecorationImage(image: AssetImage('assets/chip.png'))),
             ))
       ],

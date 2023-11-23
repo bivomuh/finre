@@ -48,7 +48,7 @@ class AnalyticsCard extends StatelessWidget {
                 // ! Navigation Bar
               ],
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Container(
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
@@ -59,7 +59,7 @@ class AnalyticsCard extends StatelessWidget {
                   border: Border.all(color: kStrokeColor)),
               child: Column(
                 children: [
-                  TabBar(
+                  const TabBar(
                     tabs: [
                       Tab(
                         text: 'Daily',
@@ -75,72 +75,69 @@ class AnalyticsCard extends StatelessWidget {
 
                   // ! Income and Outcome
                   Padding(
-                    padding: const EdgeInsets.all(16.0),
+                    padding: const EdgeInsets.all(14.0),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                            const Text('Income'),
+                            const SizedBox(height: 4),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                Text('Income'),
-                                SizedBox(height: 4),
-                                Row(
-                                  children: [
-                                    Container(
-                                      decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          color: Color(0xffDCFCE7)),
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(4.0),
-                                        child: Icon(
-                                          Icons.arrow_downward_rounded,
-                                          color: kGreenColor,
-                                          size: 14,
-                                        ),
-                                      ),
+                                Container(
+                                  decoration: const BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: Color(0xffDCFCE7)),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(4.0),
+                                    child: Icon(
+                                      Icons.arrow_downward_rounded,
+                                      color: kGreenColor,
+                                      size: 14,
                                     ),
-                                    SizedBox(width: 8),
-                                    Text(
-                                      'Rp12,000',
-                                      style: blackTextStyle.copyWith(
-                                          fontWeight: bold),
-                                    )
-                                  ],
+                                  ),
                                 ),
+                                const SizedBox(width: 8),
+                                Text(
+                                  'Rp12,000',
+                                  style:
+                                      blackTextStyle.copyWith(fontWeight: bold),
+                                )
                               ],
                             ),
-                            SizedBox(
-                              width: MediaQuery.of(context).size.width / 5,
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                          ],
+                        ),
+                        // SizedBox(
+                        //   width: MediaQuery.of(context).size.width / 3,
+                        // ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text('Outcome'),
+                            const SizedBox(height: 4),
+                            Row(
                               children: [
-                                Text('Outcome'),
-                                SizedBox(height: 4),
-                                Row(
-                                  children: [
-                                    Container(
-                                      decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          color: Color(0xffFFEDD5)),
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(4.0),
-                                        child: Icon(
-                                          Icons.arrow_upward_rounded,
-                                          color: kOrangeColor,
-                                          size: 14,
-                                        ),
-                                      ),
+                                Container(
+                                  decoration: const BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: Color(0xffFFEDD5)),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(4.0),
+                                    child: Icon(
+                                      Icons.arrow_upward_rounded,
+                                      color: kOrangeColor,
+                                      size: 14,
                                     ),
-                                    SizedBox(width: 8),
-                                    Text(
-                                      'Rp322,600',
-                                      style: blackTextStyle.copyWith(
-                                          fontWeight: bold),
-                                    )
-                                  ],
+                                  ),
+                                ),
+                                const SizedBox(width: 8),
+                                Text(
+                                  'Rp322,600',
+                                  style:
+                                      blackTextStyle.copyWith(fontWeight: bold),
                                 )
                               ],
                             )

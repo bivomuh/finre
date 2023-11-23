@@ -27,7 +27,9 @@ class _MainPageState extends State<MainPage> {
         myMoney: widget.myMoney,
       ),
       WalletPage(myMoney: widget.myMoney),
-      const InsightPage(),
+      InsightPage(
+        myMoney: widget.myMoney,
+      ),
       const ProfilePage()
     ];
 

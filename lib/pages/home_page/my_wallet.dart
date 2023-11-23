@@ -106,7 +106,7 @@ class _MyWalletState extends State<MyWallet> {
                 ),
                 child: Center(
                   child: Text(
-                    'Rp${formattedNumber}',
+                    'Rp$formattedNumber',
                     style:
                         blackTextStyle.copyWith(fontSize: 28, fontWeight: bold),
                   ),

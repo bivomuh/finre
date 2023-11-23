@@ -37,13 +37,13 @@ class _TransferToPageState extends State<TransferToPage> {
           'Transfer',
           style: blackTextStyle.copyWith(fontWeight: FontWeight.w700),
         ),
-        leading: BackButton(),
+        leading: const BackButton(),
         centerTitle: true,
       ),
       backgroundColor: kBackgroundColor,
       body: Center(
           child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 16, vertical: 24),
+        margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
         decoration: BoxDecoration(
           color: kWhiteColor,
           border: Border.all(color: kStrokeColor),
@@ -75,6 +75,7 @@ class _TransferToPageState extends State<TransferToPage> {
                   Text('My Wallet',
                       style:
                           blackTextStyle.copyWith(fontWeight: FontWeight.bold)),
+                  const SizedBox(width: 8),
                   Text('Saldo = Rp${widget.myMoney}'),
                   const Spacer(),
                   Container(
@@ -94,7 +95,7 @@ class _TransferToPageState extends State<TransferToPage> {
                   ),
                 ],
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
 
               Row(
                 children: [
@@ -119,7 +120,7 @@ class _TransferToPageState extends State<TransferToPage> {
                         style: blackTextStyle.copyWith(
                             fontSize: 16, fontWeight: semiBold),
                       ),
-                      SizedBox(height: 4),
+                      const SizedBox(height: 4),
                       Row(
                         children: [
                           Text(
@@ -136,13 +137,13 @@ class _TransferToPageState extends State<TransferToPage> {
                   ),
                 ],
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               Container(
                 height: 2,
                 width: double.infinity,
                 color: kStrokeColor,
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
 
               //! Transfer Nominal
 
@@ -167,7 +168,7 @@ class _TransferToPageState extends State<TransferToPage> {
                 style: TextStyle(
                     fontSize: 48, fontWeight: semiBold, color: kBlackColor),
               ),
-              SizedBox(height: 48),
+              const SizedBox(height: 48),
 
               //! Transfer button
 
@@ -182,15 +183,17 @@ class _TransferToPageState extends State<TransferToPage> {
                     onPressed: () {
                       try {
                         setState(() {
+                          showSnackbar(context, 'Dana berhasil terkirim!');
+
                           String amount = _nominalController.text;
                           int amountInt = int.parse(amount);
-                          print('MY MONEY NOW : ${widget.myMoney}');
-                          print('Transfer Nominal : $amountInt');
+
                           widget.myMoney -= amountInt;
                           newMoney = widget.myMoney;
                         });
                       } catch (e) {
-                        print('Try Again Man');
+                        showSnackbar(
+                            context, 'Dana gagal terkirim, silakan coba lagi');
                       }
 
                       Navigator.pushAndRemoveUntil(
@@ -221,6 +224,23 @@ class _TransferToPageState extends State<TransferToPage> {
           ),
         ),
       )),
+    );
+  }
+
+  void showSnackbar(BuildContext context, String messsege) {
+    // Gunakan ScaffoldMessenger untuk menampilkan Snackbar
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(messsege),
+        duration: const Duration(seconds: 2), // Durasi Snackbar ditampilkan
+        action: SnackBarAction(
+          label: 'Tutup',
+          onPressed: () {
+            // Aksi yang diambil ketika tombol aksi Snackbar ditekan
+            ScaffoldMessenger.of(context).hideCurrentSnackBar();
+          },
+        ),
+      ),
     );
   }
 

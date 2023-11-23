@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mamoney/pages/transfer/transfer_page.dart';
 import 'package:mamoney/shared/theme.dart';
 import 'package:mamoney/widget/transaction_profile_card.dart';
 import 'package:mamoney/widget/visa_card.dart';
@@ -55,7 +56,19 @@ class WalletPage extends StatelessWidget {
                                           borderRadius:
                                               BorderRadius.circular(8))),
                                 ),
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => TransferToPage(
+                                          imageUrl: 'assets/2.jpg',
+                                          name: 'Itadori Yuuji',
+                                          typeAcc: 'VISA',
+                                          noAcc: 123092394,
+                                          myMoney: myMoney,
+                                        ),
+                                      ));
+                                },
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
@@ -175,7 +188,7 @@ class WalletPage extends StatelessWidget {
                             width: double.infinity,
                             color: kStrokeColor,
                           ),
-                          SizedBox(height: 16),
+                          const SizedBox(height: 16),
                           TextField(
                             controller: _searchController,
                             keyboardType: TextInputType.name,
@@ -203,40 +216,64 @@ class WalletPage extends StatelessWidget {
                             typeTransaction: TypeTransaction.receive,
                             name: 'Sana',
                             day: 'Today',
-                            imageUrl: 'assets/7.jpg',
+                            imageUrl: 'assets/1.jpg',
+                            time: '01:34 PM',
                           ),
                           const TransactionProfile(
                             typeTransaction: TypeTransaction.transfer,
                             day: 'Today',
-                            imageUrl: 'assets/8.jpg',
+                            imageUrl: 'assets/2.jpg',
                             name: 'Naoya',
-                            price: 123939,
+                            price: 55000,
+                            time: '08:22 AM',
+                          ),
+                          const TransactionProfile(
+                            typeTransaction: TypeTransaction.transfer,
+                            day: 'Yesterday',
+                            imageUrl: 'assets/3.jpg',
+                            name: 'Minato',
+                            price: 80909,
+                            time: '07:16 AM',
+                          ),
+                          const TransactionProfile(
+                            typeTransaction: TypeTransaction.transfer,
+                            day: 'Yesterday',
+                            imageUrl: 'assets/4.jpg',
+                            name: 'Kinan',
+                            price: 43000,
+                            time: '06:01 AM',
                           ),
                           const TransactionProfile(
                             typeTransaction: TypeTransaction.receive,
+                            day: 'Today',
+                            imageUrl: 'assets/5.jpg',
                             name: 'Sana',
+                            price: 23423,
+                            time: '06:01 AM',
+                          ),
+                          const TransactionProfile(
+                            typeTransaction: TypeTransaction.transfer,
+                            day: 'Nov 16',
+                            imageUrl: 'assets/6.jpg',
+                            name: 'Azzam',
+                            price: 634939,
+                            time: '02:01 PM',
+                          ),
+                          const TransactionProfile(
+                            typeTransaction: TypeTransaction.transfer,
                             day: 'Today',
                             imageUrl: 'assets/7.jpg',
+                            name: 'Nakamura',
+                            price: 74439,
+                            time: '06:01 AM',
                           ),
                           const TransactionProfile(
                             typeTransaction: TypeTransaction.transfer,
                             day: 'Today',
                             imageUrl: 'assets/8.jpg',
-                            name: 'Naoya',
-                            price: 123939,
-                          ),
-                          const TransactionProfile(
-                            typeTransaction: TypeTransaction.receive,
-                            name: 'Sana',
-                            day: 'Today',
-                            imageUrl: 'assets/7.jpg',
-                          ),
-                          const TransactionProfile(
-                            typeTransaction: TypeTransaction.transfer,
-                            day: 'Today',
-                            imageUrl: 'assets/8.jpg',
-                            name: 'Naoya',
-                            price: 123939,
+                            name: 'Sutoyo',
+                            price: 52239,
+                            time: '06:01 AM',
                           ),
                         ],
                       ),

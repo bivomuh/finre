@@ -11,12 +11,12 @@ class MyProfile extends StatelessWidget {
         CircleAvatar(
           radius: 24,
           backgroundColor: kWhiteColor,
-          child: CircleAvatar(
+          child: const CircleAvatar(
             radius: 22,
             backgroundImage: AssetImage('assets/5.jpg'),
           ),
         ),
-        SizedBox(width: 16),
+        const SizedBox(width: 16),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -30,7 +30,7 @@ class MyProfile extends StatelessWidget {
             ),
           ],
         ),
-        Spacer(),
+        const Spacer(),
         Container(
           decoration: BoxDecoration(
             shape: BoxShape.circle,

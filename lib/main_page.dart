@@ -1,12 +1,12 @@
 //this page for Bottom Navigation Bar as Default
 
+import 'package:Finre/pages/home_page.dart';
+import 'package:Finre/pages/insight.dart';
+import 'package:Finre/pages/profile_page.dart';
+import 'package:Finre/pages/wallet_page.dart';
+import 'package:Finre/shared/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:mamoney/pages/home_page.dart';
-import 'package:mamoney/pages/insight.dart';
-import 'package:mamoney/pages/profile_page.dart';
-import 'package:mamoney/pages/wallet_page.dart';
-import 'package:mamoney/shared/theme.dart';
 
 class MainPage extends StatefulWidget {
   int myMoney;

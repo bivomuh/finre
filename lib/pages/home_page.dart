@@ -1,9 +1,9 @@
+import 'package:Finre/pages/home_page/analytics.dart';
+import 'package:Finre/pages/home_page/my_wallet.dart';
+import 'package:Finre/pages/home_page/profile.dart';
+import 'package:Finre/pages/home_page/recent_transaction.dart';
+import 'package:Finre/shared/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:mamoney/pages/home_page/analytics.dart';
-import 'package:mamoney/pages/home_page/my_wallet.dart';
-import 'package:mamoney/pages/home_page/profile.dart';
-import 'package:mamoney/pages/home_page/recent_transaction.dart';
-import 'package:mamoney/shared/theme.dart';
 
 class MyHomePage extends StatefulWidget {
   int myMoney;

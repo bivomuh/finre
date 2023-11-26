@@ -1,6 +1,6 @@
+import 'package:Finre/main_page.dart';
+import 'package:Finre/shared/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:mamoney/main_page.dart';
-import 'package:mamoney/shared/theme.dart';
 import 'package:pattern_formatter/pattern_formatter.dart';
 
 class TransferToPage extends StatefulWidget {

@@ -1,6 +1,6 @@
+import 'package:Finre/shared/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:mamoney/shared/theme.dart';
 
 class VisaCard extends StatelessWidget {
   const VisaCard({required this.myMoney, super.key});

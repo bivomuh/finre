@@ -1,5 +1,5 @@
+import 'package:Finre/shared/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:mamoney/shared/theme.dart';
 
 class CardWidget extends StatelessWidget {
   final Widget child;

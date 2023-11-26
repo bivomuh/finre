@@ -1,9 +1,9 @@
+import 'package:Finre/pages/transfer/transfer_page.dart';
+import 'package:Finre/shared/theme.dart';
+import 'package:Finre/widget/transaction_profile_card.dart';
+import 'package:Finre/widget/visa_card.dart';
+import 'package:Finre/widget/widget_card.dart';
 import 'package:flutter/material.dart';
-import 'package:mamoney/pages/transfer/transfer_page.dart';
-import 'package:mamoney/shared/theme.dart';
-import 'package:mamoney/widget/transaction_profile_card.dart';
-import 'package:mamoney/widget/visa_card.dart';
-import 'package:mamoney/widget/widget_card.dart';
 
 class WalletPage extends StatelessWidget {
   final int myMoney;

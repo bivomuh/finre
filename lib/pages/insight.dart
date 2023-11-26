@@ -1,7 +1,7 @@
+import 'package:Finre/shared/theme.dart';
+import 'package:Finre/widget/widget_card.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:mamoney/shared/theme.dart';
-import 'package:mamoney/widget/widget_card.dart';
 
 class InsightPage extends StatelessWidget {
   int myMoney;
